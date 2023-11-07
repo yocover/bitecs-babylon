@@ -1,0 +1,34 @@
+{
+  "root": true,
+  "parser": "@typescript-eslint/parser",
+  "env": {
+    "browser": true,
+    "node": true,
+    "amd": true
+  },
+  "plugins": ["@typescript-eslint"],
+  "extends": ["eslint:recommended", "plugin:@typescript-eslint/eslint-recommended", "plugin:@typescript-eslint/recommended"],
+  "rules": {
+    "@typescript-eslint/no-explicit-any": "off", // 新增：针对any
+    "@typescript-eslint/ban-types": "off", // 新增：针对一些类型比如 Function、Object、https://typescript-eslint.io/rules/ban-types/
+    "no-unused-vars": "off",
+    "@typescript-eslint/no-unused-vars": "off",
+    "eqeqeq": ["error", "always"], // 要求使用 === 和 !==
+    "camelcase": [
+      "error",
+      {
+        "properties": "never"
+      }
+    ], // 强制使用骆驼拼写法命名约定
+    "semi": ["error", "always"], // 语句末尾添加分号
+    "no-multiple-empty-lines": ["error", { "max": 1 }], // 禁止出现多行空行
+    "quotes": "off", // 使用单引号  允许字符串使用反勾号
+    "no-new-object": "error", // 使用字面值创建对象
+    "curly": "error", // 遵循大括号约定,
+    "no-nested-ternary": "error", // 禁止使用嵌套的三元表达式
+    "consistent-this": ["error", "self"], // 对上下文 this 的引用只能使用’self’来命名
+    "no-console": ["error", { "allow": ["warn", "error"] }], // 允许调用 console 对象的warn、error方法
+    "@typescript-eslint/ban-ts-comment": ["error", { "ts-ignore": "allow-with-description" }],
+    "@typescript-eslint/quotes": ["error", "single"] // 强制使用单引号
+  }
+}
